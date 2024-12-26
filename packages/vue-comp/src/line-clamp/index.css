@@ -1,0 +1,65 @@
+/* .lhv-line-clamp-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+} */
+
+.lhv-line-clamp-text {
+  &::before {
+    content: '';
+    --at-apply: float-right h-full -mb-6;
+  }
+
+  &::after {
+    content: '';
+    --at-apply: w-[100vw] h-[100vw] absolute -ml-25;
+    /* 给一个足够大的遮罩层，确保在不省略显示时遮住 btn，这是障眼法 */
+    box-shadow: inset calc(6.25rem - 100vw) calc(1.5rem - 100vw) 0 0 var(--light-dark-bg);
+  }
+}
+
+.lhv-line-clamp-btn {
+  /* 模拟省略号 */
+  &::before {
+    content: '...';
+    --at-apply: absolute -left-1;
+  }
+  &::after {
+    /* content: icon('i-tabler-chevron-left');
+    --at-apply: vertical-middle ml-2; */
+    content: '';
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    --at-apply: i-tabler-chevron-left inline-block ml-1 transition-transform duration-300;
+  }
+}
+
+.lhv-line-clamp-text-btn {
+  /* 模拟省略号 */
+  &::before {
+    content: '...';
+    --at-apply: absolute -left-1 transform-translate-x-[-100%];
+  }
+  &::after {
+    content: attr(data-up-text);
+  }
+}
+
+.lhv-line-clamp-input:checked + .lhv-line-clamp-text {
+  height: auto !important;
+
+  &::after {
+    --at-apply: invisible;
+  }
+
+  .lhv-line-clamp-btn::after {
+    --at-apply: i-tabler-square-rounded-chevron-left rotate-[-90deg] ml-0;
+  }
+
+  .lhv-line-clamp-text-btn::after {
+    content: attr(data-down-text);
+  }
+
+  [class*='btn']::before {
+    --at-apply: invisible;
+  }
+}

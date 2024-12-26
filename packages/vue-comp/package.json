@@ -1,0 +1,70 @@
+{
+  "name": "@lhvision/vue-comp",
+  "type": "module",
+  "version": "1.0.0",
+  "packageManager": "pnpm@9.15.0",
+  "description": "",
+  "author": "lhvision",
+  "license": "MIT",
+  "homepage": "https://github.com/lhvision/vue-comps#readme",
+  "bugs": {
+    "url": "https://github.com/lhvision/vue-comps/issues"
+  },
+  "keywords": [
+    "vue3",
+    "vue-components"
+  ],
+  "sideEffects": [
+    "dist/*"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "run-s build-only",
+    "build-only": "vite build",
+    "build-umd": "node scripts/build-umd.js",
+    "type-check": "vue-tsc --noEmit",
+    "test": "vitest run",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "re-changelog": "pnpm changelog -r 0",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "lint:eslint": "eslint . --fix"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.0"
+  },
+  "dependencies": {
+    "@lhvision/helpers": "^2.1.7"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "3.2.2",
+    "@iconify-json/tabler": "^1.2.10",
+    "@storybook/addon-essentials": "8.4.7",
+    "@storybook/addon-interactions": "8.4.7",
+    "@storybook/addon-onboarding": "8.4.7",
+    "@storybook/blocks": "8.4.7",
+    "@storybook/test": "8.4.7",
+    "@storybook/vue3": "8.4.7",
+    "@storybook/vue3-vite": "8.4.7",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/tsconfig": "^0.7.0",
+    "conventional-changelog-cli": "^5.0.0",
+    "cross-env": "^7.0.3",
+    "jsdom": "^25.0.1",
+    "storybook": "8.4.7",
+    "unocss": "^0.65.1",
+    "vite": "^6.0.3",
+    "vite-plugin-dts": "^4.3.0",
+    "vitest": "^2.1.8",
+    "vue": "^3.5.13",
+    "vue-tsc": "^2.1.10"
+  }
+}

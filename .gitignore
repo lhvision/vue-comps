@@ -1,0 +1,35 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+vite.config.ts.timestamp*
+*.tsbuildinfo
+*storybook.log
+
+node_modules
+dist
+dist-ssr
+coverage
+*.local
+.vite
+.eslintcache
+
+/cypress/videos/
+/cypress/screenshots/
+/packages/playground
+
+# Editor directories and files
+.test-server
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.txt
+*.response.json

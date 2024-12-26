@@ -1,0 +1,37 @@
+.lhv-task-bar-item {
+  width: calc(var(--scale, 1) * var(--item-width));
+  height: calc(var(--scale, 1) * var(--item-width));
+  transform: translateY(calc((var(--scale, 1) - 1) * -24px));
+
+  &::after {
+    content: attr(data-tooltip);
+    font-size: 12px;
+    --at-apply: absolute -top-7 left-1/2 -translate-x-1/2 p-1 whitespace-nowrap hidden bg-gray-100 rounded;
+    --at-apply: 'text-black shadow dark:shadow-white dark:text-white';
+  }
+
+  /* &:hover::after {
+    --at-apply: block;
+  } */
+}
+
+.lhv-task-bar-item--left-vertical {
+  transform: translateX(calc((var(--scale, 1) - 1) * 24px));
+
+  /* &::after {
+    --at-apply: left-full top-1/2 -translate-y-1/2;
+  } */
+}
+
+.lhv-task-bar-item--right-vertical {
+  transform: translateX(calc((var(--scale, 1) - 1) * -24px));
+
+  /* &::after {
+    --at-apply: -left-full top-1/2 -translate-y-1/2;
+  } */
+}
+
+.lhv-task-bar-gap {
+  width: calc(var(--scale, 1) * var(--gap-width));
+  height: calc(var(--scale, 1) * var(--gap-width));
+}

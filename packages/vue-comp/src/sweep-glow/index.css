@@ -1,0 +1,37 @@
+.lhv-sweep-glow-text {
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(
+      var(--sweep-glow-angle),
+      var(--sweep-glow-color-start) 40%,
+      var(--sweep-glow-color-middle),
+      var(--sweep-glow-color-end) 60%
+    ) -100%/50%
+    no-repeat currentColor;
+  animation: lhv-sweep-glow-text 2s infinite;
+}
+
+@keyframes lhv-sweep-glow-text {
+  to {
+    background-position: 200%;
+  }
+}
+
+.lhv-sweep-glow-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  background: linear-gradient(
+    45deg,
+    var(--sweep-glow-color-start) 40%,
+    var(--sweep-glow-color-middle),
+    var(--sweep-glow-color-end) 60%
+  );
+  animation: lhv-sweep-glow-wrap 2s infinite;
+  transform: translateX(-100%);
+}
+
+@keyframes lhv-sweep-glow-wrap {
+  to {
+    transform: translateX(100%);
+  }
+}
